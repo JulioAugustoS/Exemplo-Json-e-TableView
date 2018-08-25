@@ -12,6 +12,8 @@
 		ACCE12772131E1120004FD3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACCE12752131E1120004FD3C /* Main.storyboard */; };
 		ACCE12792131E1180004FD3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACCE12782131E1180004FD3C /* Assets.xcassets */; };
 		ACCE127C2131E1180004FD3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACCE127A2131E1180004FD3C /* LaunchScreen.storyboard */; };
+		ACCE12842131E18A0004FD3C /* ListaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCE12832131E18A0004FD3C /* ListaTableViewController.swift */; };
+		ACCE12862131E30D0004FD3C /* Aplicativo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCE12852131E30D0004FD3C /* Aplicativo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		ACCE12782131E1180004FD3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACCE127B2131E1180004FD3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACCE127D2131E1180004FD3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACCE12832131E18A0004FD3C /* ListaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaTableViewController.swift; sourceTree = "<group>"; };
+		ACCE12852131E30D0004FD3C /* Aplicativo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aplicativo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 				ACCE12712131E1120004FD3C /* AppDelegate.swift */,
 				ACCE12732131E1120004FD3C /* ViewController.swift */,
 				ACCE12752131E1120004FD3C /* Main.storyboard */,
+				ACCE12852131E30D0004FD3C /* Aplicativo.swift */,
+				ACCE12832131E18A0004FD3C /* ListaTableViewController.swift */,
 				ACCE12782131E1180004FD3C /* Assets.xcassets */,
 				ACCE127A2131E1180004FD3C /* LaunchScreen.storyboard */,
 				ACCE127D2131E1180004FD3C /* Info.plist */,
@@ -137,6 +143,8 @@
 			files = (
 				ACCE12742131E1120004FD3C /* ViewController.swift in Sources */,
 				ACCE12722131E1120004FD3C /* AppDelegate.swift in Sources */,
+				ACCE12842131E18A0004FD3C /* ListaTableViewController.swift in Sources */,
+				ACCE12862131E30D0004FD3C /* Aplicativo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
