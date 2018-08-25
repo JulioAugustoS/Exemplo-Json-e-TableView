@@ -11,6 +11,8 @@ import UIKit
 class Aplicativo: NSObject {
     
     var nome:String = ""
-    var imagem:String = ""
+    var imagemSTR:String = ""
+    var imagem:UIImage? = nil
+    var tipo:String = ""
 
 }

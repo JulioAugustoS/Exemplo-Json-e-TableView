@@ -29,18 +29,35 @@ class ListaTableViewController: UITableViewController {
                     do{
                         let parsedJSON = try JSONSerialization.jsonObject(with: jsonData) as! [String:Any]
                         print(parsedJSON)
-                        if let feed = parsedJSON["feed"] as? [String:Any]{
-                            if let apps = feed["entry"] as? [[String:Any]] {
-                                for app in apps{
-                                    let objApp = Aplicativo()
-                                    if let imname = app["im:name"] as? [String:Any]{
-                                        if let nomeApp = imname["label"] as? String{
-                                            objApp.nome = nomeApp
-                                            self.aplicativoArray.append(objApp)
-                                        }
-                                    }
-                                }
-                            }
+                        guard let feed = parsedJSON["feed"] as? [String:Any] else { return }
+                        guard let apps = feed["entry"] as? [[String:Any]] else { return }
+                        for app in apps{
+                            let objApp = Aplicativo()
+                            // nome do aplicativo
+                            guard let imname = app["im:name"] as? [String:Any] else { return }
+                            guard let nomeApp = imname["label"] as? String else { return }
+                            // imagem string com a URL
+                            guard let arrayImage = app["im:image"] as? [Any] else { return }
+                            guard let imagem0 = arrayImage[0] as? [String:Any] else { return }
+                            guard let imgStr = imagem0["label"] as? String else { return }
+                            
+                            //Imagem
+                            
+                            //Transformando uma imagem em data, não é nosso caso
+                            //let imagem:UIImage = UIImage(named: "blablabla.png")!
+                            //let imagemData2:Data = UIImagePNGRepresentation(imagem)!
+                            
+                            //outra possibilidade Transformando uma url em data
+                            let myUrl = URL(string: imgStr)
+                            let imageData:Data = try Data(contentsOf: myUrl!)
+                            //transformando o data em Imagem
+                            let minhaImagem = UIImage(data: imageData)
+                            
+                            objApp.nome = nomeApp
+                            objApp.imagemSTR = imgStr
+                            objApp.imagem = minhaImagem
+                            
+                            self.aplicativoArray.append(objApp)
                         }
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
@@ -77,6 +94,7 @@ class ListaTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         cell.textLabel?.text = aplicativoArray[indexPath.row].nome
+        cell.imageView?.image = aplicativoArray[indexPath.row].imagem
         
         return cell
     }
